@@ -18,6 +18,7 @@
 
 ## BROWSER SUPPORT (The frontend nightmare 😱😱😱)
 
+![Image custom elements support](https://github.com/Totemika/i-dont-know-polymer/blob/master/img/custom-elements-support.png?raw=true)
 
 
 
