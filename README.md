@@ -20,6 +20,7 @@
 
 ![Image custom elements support](https://github.com/Totemika/i-dont-know-polymer/blob/master/img/browser-support.gif?raw=true)
 
+So, **Chrome** is the only browser giving almost full support.
 
 
 
