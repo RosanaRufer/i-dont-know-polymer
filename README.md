@@ -42,13 +42,24 @@ Fiddling (playground)
 ---------------------
 In order to save time, the first Polymer exercises will be done on Plunkr. Later, they will be pushed to this repo.
 
-* [01 Importing Polymer](https://plnkr.co/edit/QylLhWU4FAqyDml574NW?p=preview)
- * ```rel``` attribute is not supported for all browsers => We use webcomponentslite.mint.js that will work as a fallback shim and allow older browsers to use the rel attribute and load full html documents as well.
+#### 1. Importing Polymer (for practising purposes)
 
- * ```<base>``` tag allows modifying the base directory the document will load the reference files from.
+[Plunk](https://plnkr.co/edit/QylLhWU4FAqyDml574NW?p=preview)
 
- * We can (only for playing on plunkr or similar) get all polymer components from the following base: ```<base href="https://polygit.org/components">``` **Note:** It is slow as hell!
+* ```rel``` attribute is not supported for all browsers => We use webcomponentslite.mint.js that will work as a fallback shim and allow older browsers to use the rel attribute and load full html documents as well.
+
+* ```<base>``` tag allows modifying the base directory the document will load the reference files from.
+
+* We can (only for playing on plunkr or similar) get all polymer components from the following base: ```<base href="https://polygit.org/components">``` **Note:** It is slow as hell!
 
  ![shame on iron-flex](img/iron-flex-slow-as-hell.png)
+
+
+#### 2.Hello Element
+
+[Plunk](https://plnkr.co/edit/gWkLtg39GTsJt2hUuq7Q?p=preview)
+
+Creating an element is quite basic. You just have to instantiate a Polymer object, giving a value to the ```is``` property that will act as the component **id**.
+Then, use that same id to define the template inside a ```<dom-module></dom-module>``` tag. You can see [the Plunker](https://plnkr.co/edit/gWkLtg39GTsJt2hUuq7Q?p=preview) if it still not clear.
 
 
