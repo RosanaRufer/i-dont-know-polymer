@@ -55,7 +55,7 @@ In order to save time, the first Polymer exercises will be done on Plunkr. Later
  ![shame on iron-flex](img/iron-flex-slow-as-hell.png)
 
 
-#### 2.Hello Element
+#### 2. Hello Element
 
 [Plunk](https://plnkr.co/edit/gWkLtg39GTsJt2hUuq7Q?p=preview)
 
@@ -63,3 +63,11 @@ Creating an element is quite basic. You just have to instantiate a Polymer objec
 Then, use that same id to define the template inside a ```<dom-module></dom-module>``` tag. You can see [the Plunker](https://plnkr.co/edit/gWkLtg39GTsJt2hUuq7Q?p=preview) if it still not clear.
 
 
+#### 3. Including our Hello Element
+
+[Plunk](https://plnkr.co/edit/fMYgGptFjf2Z4zx6Zkmt?p=preview)
+
+Importing the element is done as a [normal import.](https://w3c.github.io/webcomponents/spec/imports/)
+The ```HTMLImports.whenReady``` used before to instance the element inside the ```<script>``` tags is no longer necessary, as the element will be also an import.
+=> If one dependency is already loaded, it won't load it again.
+=> **unresolved** attribute hides the tag where it's been declared until all contained elements are loaded. (like the ng-cloak in AngularJS)
