@@ -151,6 +151,80 @@ document.querySelector("body").appendChild(el2);
 
 ========================
 
-This is the moment I realized Polymer 2.0 is already out. Going to finish this course and go for some Polymer 2.0
+This is the moment I realized Polymer 2.0 is already out. Going to finish this course and go for some Polymer 2.0 under [i-dont-know-polymer-v2](i-dont-know-polymer-v2)
 
 ========================
+
+#### 7. Property keys
+
+In the Polymer constructor configuration, use the properties  polymer attribute.
+This attribute contains the following keys:
+```
+properties: {
+type:
+value:
+reflectToAttribute:
+readOnly:
+notify:
+computed:
+observer:
+}
+```
+
+Example:
+
+```
+Polymer({
+is: "alert-element",
+properties: {
+  message: {
+        type: String,
+        value: "Hello there"
+        }
+   },
+   alertUpdateTime: {
+     type: Date,
+     value: function(){
+        return new Date();
+     }
+   }
+});
+```
+And use it as:
+```
+<dom-module id="alert-element">
+<template>[[alertUpdateTime]]</template>
+</dom-module>
+```
+
+#### 8. Data binding
+
+[Plunk](https://plnkr.co/edit/Mnrz6IvrIZ1tlMpLqnAH?p=preview)
+
+In Polymer, when we use square brackets, the value is bound from the host to the target but not from the target to the host:
+
+Square brackets:
+
+![square-brackets-binding](img/square-brackets-binding.png)
+
+Curly brackets:
+
+![curly-brackets-binding](img/curly-brackets-binding.png)
+
+host ~ model
+
+target ~ view
+
+These type of bindings are controlled the readOnly and notify properties.
+With notify: true => <property-name>-changed => trigger when the property is changed.
+
+A Polymer object can get attached to property-name>-changed by:
+```this.addEventListener("<property-name>-changed", function(){...});```
+
+When setting readOnly to true, the target value will never get updated when the host value is changed, even if its using curly brackets.
+
+
+When the document is loaded, Polymer looks for data annotations (curly and square brackets) and creates the property effects object, so any time this property changes:
+When the property changes, a dirty check will be performed with the __data__.property-name value.
+If the value has changed, the effectProperty array will be looped, updating all corresponding DOM items
+additionally, if the notify:true, Polymer will trigger a property-changed event.
