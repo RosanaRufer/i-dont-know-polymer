@@ -215,8 +215,8 @@ host ~ model
 
 target ~ view
 
-These type of bindings are controlled the readOnly and notify properties.
-With notify: true => <property-name>-changed => trigger when the property is changed.
+These type of bindings are controlled by the readOnly and notify properties.
+With notify: true => ```<property-name>-changed``` => triggers when the property is changed.
 
 A Polymer object can get attached to property-name>-changed by:
 ```this.addEventListener("<property-name>-changed", function(){...});```
@@ -226,5 +226,19 @@ When setting readOnly to true, the target value will never get updated when the 
 
 When the document is loaded, Polymer looks for data annotations (curly and square brackets) and creates the property effects object, so any time this property changes:
 When the property changes, a dirty check will be performed with the __data__.property-name value.
-If the value has changed, the effectProperty array will be looped, updating all corresponding DOM items
+
+If the value has changed, the effectProperty array will be looped through, updating all corresponding DOM items
 additionally, if the notify:true, Polymer will trigger a property-changed event.
+
+
+observer on properties will only get notified when using
+this.set(object.property, newValue), just like with objects data bindings, since
+there is not a setter defined for properties. We must set new values using one of these options:
+```
+this.objectName = { property: "propValue", ...};
+this.notifyPath( "objectName.property", "propValue");
+this.set("objectName.property", "propValue);
+```
+And this will never notify any listner, so remember to avoid: ```this.opjectName.property```
+
+![value-changed-1](img/value-changed-1.png)
