@@ -18,7 +18,7 @@
 
 ## BROWSER SUPPORT (The frontend nightmare 😱😱😱)
 
-![Image custom elements support](https://github.com/Totemika/i-dont-know-polymer/blob/master/img/browser-support.gif?raw=true)
+![Image custom elements support](img/browser-support.gif?raw=true)
 
 So, **Chrome** is the only browser giving almost full support to web components.
 
